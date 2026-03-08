@@ -1,6 +1,7 @@
 [build]
   command = "npm install && npm run build"
-  publish = ".netlify"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
