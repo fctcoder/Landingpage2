@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  nuxt:
+    build:
+      context: ..
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../:/app
+      - /app/node_modules
+    environment:
+      - NUXT_PUBLIC_SUPABASE_URL=${NUXT_PUBLIC_SUPABASE_URL}
+      - NUXT_PUBLIC_SUPABASE_KEY=${NUXT_PUBLIC_SUPABASE_KEY}
+      - SUPABASE_SERVICE_KEY=${SUPABASE_SERVICE_KEY}
+    command: npm run dev
+    networks:
+      - spadex-network
+
+  # Optional: Local Supabase (requires Supabase CLI)
+  # Run `supabase init` and `supabase start` separately
+
+networks:
+  spadex-network:
+    driver: bridge

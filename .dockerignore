@@ -1,0 +1,16 @@
+node_modules
+.nuxt
+.output
+dist
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.git
+.gitignore
+README.md
+.md
+coverage
+.idea
+.vscode
