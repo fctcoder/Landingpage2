@@ -1,7 +1,6 @@
 [build]
-  command = "npm run build"
+  command = "npm install && npm run build"
   publish = ".output/public"
 
 [build.environment]
-  NPM_CONFIG_PRODUCTION = "false"
   NODE_VERSION = "20"
